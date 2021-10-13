@@ -1,1 +1,22 @@
+---
+- hosts: all
+  gather_facts: yes
 
+- name: install_haproxy
+  hosts: haproxy
+  become: yes
+  become_method: sudo
+  roles:
+    - haproxy
+
+- name: install_nginx
+  hosts: webservers
+  become: yes
+  roles:
+    - nginx
+    - php
+
+- name: haproxy-test
+  hosts: haproxy
+  roles:
+    - haproxy-test
