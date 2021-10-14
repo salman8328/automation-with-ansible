@@ -1,0 +1,39 @@
+
+host bastionET2598
+#change      89.42.140.28        with your own bastionET2598 ip address
+     HostName 89.42.140.28 
+
+host devhaproxy
+#change      91.123.202.170       with your own devhaproxy ip address
+     HostName 91.123.202.170
+
+host devA
+#change       10.1.0.177          with your own devA ip address
+     Hostname 10.1.0.177
+
+host devB
+#change       10.1.0.125         with your own devB ip address
+     HostName 10.1.0.125
+
+host devC
+#change       10.1.0.73          with your own devC ip address
+     HostName 10.1.0.73
+
+ host bastionET2598
+#replace    "~/.ssh/server_key"    with your own path to the private key
+     StrictHostKeyChecking no
+     UserKnownHostsFile=~/.ssh/null
+     IdentityFile ~/.ssh/server_key
+     user ubuntu
+     PasswordAuthentication no
+
+
+host devhaproxy , devA , devB , devC
+#replace    "~/.ssh/server_key"    with your own path to the private key 
+     StrictHostKeyChecking no
+     UserKnownHostsFile=~/.ssh/null
+     IdentityFile ~/.ssh/server_key
+     user ubuntu     
+     PasswordAuthentication no
+     ProxyCommand ssh -q -W %h:%p bastionET2598
+
