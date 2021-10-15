@@ -16,6 +16,9 @@ the config file has the ip address of my servers and is commented indicating whe
 4. type the following commands in ubuntu, replace "<path in your system .....>" with the path of your system.
 
 ###############################################################
+
+rsync <path in your system for private key>   bastionET2598: <path in where you need private key in server>
+Ex:
 rsync  home/.ssh/server_key  bastionET2598:home/.ssh/server_key
 
 #here home/.ssh/server_key is my private key path in my laptop, and i saved it in bastion server at path  ~/.ssh/server_key
