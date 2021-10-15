@@ -6,6 +6,7 @@
 
 2. Create ssh key pairs (ssh-keygen -t rsa) 
 - remember the path where the keys are .
+- remember that the server key file permissions should be 400, if not try "chmod 400 <private key path> "
 
 3. edit my config file and save the config file in /.ssh/
 #######
