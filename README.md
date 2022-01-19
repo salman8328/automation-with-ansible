@@ -15,19 +15,6 @@ the config file has the ip address of my servers and is commented indicating whe
 
 4. type the following commands in ubuntu, replace "<path in your system .....>" with the path of your system.
 
-###############################################################
-
-rsync <path in your system for private key>   bastionET2598: <path in where you need private key in server>
-Ex:
-rsync  home/.ssh/server_key  bastionET2598:home/.ssh/server_key
-
-#here home/.ssh/server_key is my private key path in my laptop, and i saved it in bastion server at path  ~/.ssh/server_key
-
-#note- if you save at other place, your private keys, please change path in config file, in hosts(the file which you get in repository ) file 
-
-rsync  home/.ssh/config  bastionET2598:home/.ssh/config
-###############################################################
-
 3. after the above steps are done, run the below command in your system ubuntu terminal
 
 $cd home/salman_ansible
